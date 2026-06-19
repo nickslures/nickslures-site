@@ -1,11 +1,12 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fish On Nick's Lures | Hand-Poured Lures & Jig Heads</title>
-  <meta name="description" content="Small-batch soft plastics, jig heads, and fishing tackle from Fish On Nick's Lures in Las Vegas." />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fish On Nick's Lures | Hand-Poured Lures &amp; Jig Heads</title>
+<meta content="Small-batch soft plastics, jig heads, and fishing tackle from Fish On Nick's Lures in Las Vegas." name="description"/>
+<style>
     :root{
       --yellow:#ffd11a;
       --yellow-2:#f1b800;
@@ -129,202 +130,154 @@
       .form input{min-width:0;width:100%}
       .form button{width:100%}
     }
-  </style>
-</head>
+  
+
+    /* Dynamic homepage product cards */
+    .product-link{display:block;color:inherit;text-decoration:none}
+    .product-link .card{height:100%;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+    .product-link:hover .card{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.13);border-color:rgba(255,209,26,.65)}
+    .product-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.75rem}
+    .spot-badge{display:inline-flex;align-items:center;border-radius:999px;background:#111;color:var(--yellow);font-size:.68rem;font-weight:950;letter-spacing:.05em;text-transform:uppercase;padding:.28rem .48rem;white-space:nowrap}
+    .card .product-meta{color:var(--muted);font-size:.8rem;margin-top:.25rem}
+    .placeholder-note{grid-column:1/-1;text-align:center;color:var(--muted);padding:1.5rem;border:1px dashed #ccc;border-radius:18px;background:#fff}
+    .cat{color:#fff}
+    .hero-photo{display:block;color:inherit;text-decoration:none}
+</style>
+<link href="favicon.ico" rel="icon" sizes="any"/></head>
 <body>
-  <div class="topbar">Hand-poured lures • Small-batch tackle • Built for real bites</div>
-
-  <header class="header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Fish On Nick's Lures home">
-        <span class="brand-mark">🐟</span>
-        <span class="brand-name">Fish On<span>Nick's Lures</span></span>
-      </a>
-      <div class="links">
-        <a href="#products">Shop Lures</a>
-        <a href="#categories">Soft Plastics</a>
-        <a href="#products">Jig Heads</a>
-        <a href="#products">New Arrivals</a>
-        <a href="#maker">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a class="phone" href="tel:17025103365">702-510-3365</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1>Hand-Poured Lures.<br>Built for Real Bites.</h1>
-          <div class="accent-line"></div>
-          <p>Custom soft plastics and jig heads made by anglers, for anglers. Small-batch tackle from Las Vegas with proven colors, proven profiles, and real on-the-water feedback.</p>
-          <div class="actions">
-            <a class="btn primary" href="#products">Shop Soft Plastics</a>
-            <a class="btn secondary" href="#products">View Jig Heads</a>
-          </div>
-        </div>
-        <div class="hero-photo">
-          <img src="assets/images/chartreuse-swimbaits.png" alt="Two chartreuse paddle tail swimbaits on a clean product background">
-        </div>
-      </div>
-    </section>
-
-    <div class="values">
-      <div class="values-grid">
-        <div class="value"><strong>Small Batch</strong><span>Hand-poured in Las Vegas</span></div>
-        <div class="value"><strong>Angler Tested</strong><span>Built and fished by real anglers</span></div>
-        <div class="value"><strong>Fast Shipping</strong><span>Orders ship quick</span></div>
-        <div class="value"><strong>Secure Checkout</strong><span>Safe &amp; secure payments</span></div>
-      </div>
-    </div>
-
-    <section id="products">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>Featured Products</h2>
-          <div class="brush"></div>
-        </div>
-        <div class="products">
-          <article class="card">
-            <div class="card-media"><img src="assets/images/chartreuse-swimbaits.png" alt="Paddle Tail Swim Bait in chartreuse"></div>
-            <h3>Paddle Tail Swim Bait – Chartreuse</h3>
-            <div class="stars">★★★★★ <span class="small">(45)</span></div>
-            <div class="price">$5.49</div>
-          </article>
-          <article class="card">
-            <div class="card-media"><img src="assets/images/silver-red-eye-jigs.png" alt="Silver red-eye darter head jig"></div>
-            <h3>Darter Head Jig – Silver / Red Eye</h3>
-            <div class="stars">★★★★★ <span class="small">(38)</span></div>
-            <div class="price">$5.79</div>
-          </article>
-          <article class="card">
-            <div class="card-media"><img src="assets/images/silver-red-eye-jigs.png" alt="Silver red-eye diamond head jig"></div>
-            <h3>Diamond Head Jig – Silver / Red Eye</h3>
-            <div class="stars">★★★★★ <span class="small">(33)</span></div>
-            <div class="price">$5.79</div>
-          </article>
-          <article class="card">
-            <div class="card-media"><img src="assets/images/ball-jig-heads.png" alt="Unpainted metallic jig heads"></div>
-            <h3>Ball Jig Heads – 3 Pack</h3>
-            <div class="stars">★★★★★ <span class="small">(41)</span></div>
-            <div class="price">$4.99</div>
-          </article>
-          <article class="card">
-            <div class="card-media"><img src="assets/images/swim-rig-spinner.png" alt="Swim rig spinner with silver and gold blades"></div>
-            <h3>Swim Rig Spinner</h3>
-            <div class="stars">★★★★★ <span class="small">(27)</span></div>
-            <div class="price">$3.99</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="categories" id="categories">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>Shop by Category</h2>
-          <div class="brush"></div>
-        </div>
-        <div class="cat-grid">
-          <div class="cat">
-            <img src="assets/images/chartreuse-swimbaits.png" alt="Soft plastics">
-            <h3>Soft Plastics</h3>
-            <a class="btn-sm" href="#products">Shop Now</a>
-          </div>
-          <div class="cat">
-            <img src="assets/images/silver-red-eye-jigs.png" alt="Jigs and terminal tackle">
-            <h3>Jigs &amp;<br>Terminal Tackle</h3>
-            <a class="btn-sm" href="#products">Shop Now</a>
-          </div>
-          <div class="cat">
-            <img src="assets/images/swim-rig-spinner.png" alt="Tackle accessories">
-            <h3>Tackle &amp;<br>Accessories</h3>
-            <a class="btn-sm" href="#products">Shop Now</a>
-          </div>
-          <div class="cat">
-            <img src="assets/images/soft-plastics-assortment.png" alt="Apparel and gear">
-            <h3>Apparel &amp; Gear</h3>
-            <a class="btn-sm" href="#contact">Coming Soon</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="maker" id="maker">
-      <div class="wrap maker-shell">
-        <div class="maker-grid">
-          <div class="maker-photo">
-            <img src="assets/images/nick-workshop-generated.png" alt="Nick working on lures in a workshop">
-          </div>
-          <div class="maker-copy">
-            <h2>Meet the Maker</h2>
-            <div class="brush"></div>
-            <p>Fish On Nick's Lures started with one goal: make baits that flat-out catch fish. Every lure is hand-poured in small batches using practical colors, proven jig styles, and real fishing feedback.</p>
-            <p>Built in Las Vegas and made for real anglers, the lineup focuses on the things that matter most — clean rigging, useful size options, and fish-catching action.</p>
-            <div class="badges">
-              <div class="badge"><strong>Hand-Poured</strong><span>Made in Las Vegas</span></div>
-              <div class="badge"><strong>Built by Anglers</strong><span>Designed for real conditions</span></div>
-              <div class="badge"><strong>Quality Materials</strong><span>Small-batch attention to detail</span></div>
-            </div>
-          </div>
-          <div class="polaroid">
-            <img src="assets/images/nick-fishing-generated.png" alt="Nick holding a bass outdoors">
-            <p class="polaroid-note">Tight lines!<br>– Nick</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="newsletter">
-      <div class="newsletter-inner">
-        <div>
-          <h2>Join the Crew</h2>
-          <p>Get new drops, fishing tips, and exclusive offers.</p>
-        </div>
-        <form class="form">
-          <input type="email" placeholder="Enter your email address" aria-label="Email address">
-          <button type="button">Sign Me Up</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="footer-grid">
-      <div>
-        <div class="brand" style="margin-bottom:.7rem"><span class="brand-mark">🐟</span><span class="brand-name">Fish On<span>Nick's Lures</span></span></div>
-        <p>Small-batch fishing lures, jig heads, and tackle from Las Vegas.</p>
-      </div>
-      <div>
-        <div class="footer-title">Contact Us</div>
-        <a href="tel:17025103365">702-510-3365</a>
-        <a href="mailto:info@nickslures.com">info@nickslures.com</a>
-        <p>Las Vegas, NV</p>
-      </div>
-      <div>
-        <div class="footer-title">Shop</div>
-        <a href="#products">Shop Lures</a>
-        <a href="#categories">Soft Plastics</a>
-        <a href="#products">Jig Heads</a>
-        <a href="#products">New Arrivals</a>
-      </div>
-      <div>
-        <div class="footer-title">About</div>
-        <a href="#maker">About Us</a>
-        <a href="#maker">Our Process</a>
-        <a href="#products">Reviews</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>
-        <div class="footer-title">Customer Service</div>
-        <a href="#contact">Shipping &amp; Returns</a>
-        <a href="#contact">FAQ</a>
-        <a href="#contact">Terms of Service</a>
-        <a href="#contact">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="copyright">© 2026 Fish On Nick's Lures. All rights reserved. Demo homepage mockup.</div>
-  </footer>
-</body>
+<div class="topbar">Hand-poured lures • Small-batch tackle • Built for real bites</div>
+<header class="header">
+<nav aria-label="Primary navigation" class="nav">
+<a aria-label="Fish On Nick's Lures home" class="brand" href="#top">
+<span class="brand-mark">🐟</span>
+<span class="brand-name">Fish On<span>Nick's Lures</span></span>
+</a>
+<div class="links">
+<a href="#products">Shop Lures</a>
+<a href="#categories">Soft Plastics</a>
+<a href="#products">Jig Heads</a>
+<a href="#products">New Arrivals</a>
+<a href="#maker">About</a>
+<a href="#contact">Contact</a>
+</div>
+<a class="phone" href="tel:17025103365">702-510-3365</a>
+</nav>
+</header>
+<main id="top">
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<h1>Hand-Poured Lures.<br/>Built for Real Bites.</h1>
+<div class="accent-line"></div>
+<p>Custom soft plastics and jig heads made by anglers, for anglers. Small-batch tackle from Las Vegas with proven colors, proven profiles, and real on-the-water feedback.</p>
+<div class="actions">
+<a class="btn primary" href="product.html?product=paddle-tail-swim-bait-chartreuse" id="hero-primary-link">Shop Soft Plastics</a>
+<a class="btn secondary" href="#products" id="hero-secondary-link">View Jig Heads</a>
+</div>
+</div>
+<a class="hero-photo" data-homepage-region="hero-product-image" href="product.html?product=paddle-tail-swim-bait-chartreuse" id="home-hero-product-link">
+<img alt="Two chartreuse paddle tail swimbaits on a clean product background" id="home-hero-product-image" loading="eager" src="assets/images/chartreuse-swimbaits.png"/>
+</a>
+</div>
+</section>
+<div class="values">
+<div class="values-grid">
+<div class="value"><strong>Small Batch</strong><span>Hand-poured in Las Vegas</span></div>
+<div class="value"><strong>Angler Tested</strong><span>Built and fished by real anglers</span></div>
+<div class="value"><strong>Fast Shipping</strong><span>Orders ship quick</span></div>
+<div class="value"><strong>Secure Checkout</strong><span>Safe &amp; secure payments</span></div>
+</div>
+</div>
+<section id="products">
+<div class="wrap">
+<div class="section-title">
+<h2>Featured Products</h2>
+<div class="brush"></div>
+</div>
+<div aria-live="polite" class="products" data-homepage-region="featured-products" id="featured-products"> Featured products are dynamic. Later the admin/control panel should update product.homePage.show/order in assets/js/products.js or an API. <noscript>Featured products load from assets/js/products.js. Please enable JavaScript or add static fallback cards here.</noscript></div>
+</div>
+</section>
+<section class="categories" id="categories">
+<div class="wrap">
+<div class="section-title">
+<h2>Shop by Category</h2>
+<div class="brush"></div>
+</div>
+<div class="cat-grid" data-homepage-region="shop-categories" id="home-category-grid"> Shop categories are dynamic from assets/js/products.js. <noscript>Shop categories load from assets/js/products.js.</noscript></div>
+</div>
+</section>
+<section class="maker" id="maker">
+<div class="wrap maker-shell">
+<div class="maker-grid">
+<div class="maker-photo">
+<img alt="Nick working on lures in a workshop" src="assets/images/nick-workshop-generated.png"/>
+</div>
+<div class="maker-copy">
+<h2>Meet the Maker</h2>
+<div class="brush"></div>
+<p>Fish On Nick's Lures started with one goal: make baits that flat-out catch fish. Every lure is hand-poured in small batches using practical colors, proven jig styles, and real fishing feedback.</p>
+<p>Built in Las Vegas and made for real anglers, the lineup focuses on the things that matter most — clean rigging, useful size options, and fish-catching action.</p>
+<div class="badges">
+<div class="badge"><strong>Hand-Poured</strong><span>Made in Las Vegas</span></div>
+<div class="badge"><strong>Built by Anglers</strong><span>Designed for real conditions</span></div>
+<div class="badge"><strong>Quality Materials</strong><span>Small-batch attention to detail</span></div>
+</div>
+</div>
+<div class="polaroid">
+<img alt="Nick holding a bass outdoors" src="assets/images/nick-fishing-generated.png"/>
+<p class="polaroid-note">Tight lines!<br/>– Nick</p>
+</div>
+</div>
+</div>
+</section>
+<section class="newsletter">
+<div class="newsletter-inner">
+<div>
+<h2>Join the Crew</h2>
+<p>Get new drops, fishing tips, and exclusive offers.</p>
+</div>
+<form class="form">
+<input aria-label="Email address" placeholder="Enter your email address" type="email"/>
+<button type="button">Sign Me Up</button>
+</form>
+</div>
+</section>
+</main>
+<footer id="contact">
+<div class="footer-grid">
+<div>
+<div class="brand" style="margin-bottom:.7rem"><span class="brand-mark">🐟</span><span class="brand-name">Fish On<span>Nick's Lures</span></span></div>
+<p>Small-batch fishing lures, jig heads, and tackle from Las Vegas.</p>
+</div>
+<div>
+<div class="footer-title">Contact Us</div>
+<a href="tel:17025103365">702-510-3365</a>
+<a href="mailto:info@nickslures.com">info@nickslures.com</a>
+<p>Las Vegas, NV</p>
+</div>
+<div>
+<div class="footer-title">Shop</div>
+<a href="#products">Shop Lures</a>
+<a href="#categories">Soft Plastics</a>
+<a href="#products">Jig Heads</a>
+<a href="#products">New Arrivals</a>
+</div>
+<div>
+<div class="footer-title">About</div>
+<a href="#maker">About Us</a>
+<a href="#maker">Our Process</a>
+<a href="#products">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
+<div>
+<div class="footer-title">Customer Service</div>
+<a href="#contact">Shipping &amp; Returns</a>
+<a href="#contact">FAQ</a>
+<a href="#contact">Terms of Service</a>
+<a href="#contact">Privacy Policy</a>
+</div>
+</div>
+<div class="copyright">© 2026 Fish On Nick's Lures. All rights reserved. Demo homepage mockup.</div>
+</footer>
+<script src="assets/js/products.js"></script><script src="assets/js/index-products.js"></script></body>
 </html>

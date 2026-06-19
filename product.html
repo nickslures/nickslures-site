@@ -1,49 +1,261 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Product | Nick's Lures</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product | Fish On Nick's Lures</title>
+  <meta name="description" content="Product details for Fish On Nick's Lures." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <style>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/products.css">
+    :root{
+      --yellow:#ffd11a;
+      --yellow-2:#f1b800;
+      --black:#0b0b0b;
+      --charcoal:#171717;
+      --gray:#f7f7f5;
+      --text:#111;
+      --muted:#666;
+      --white:#fff;
+      --shadow:0 16px 40px rgba(0,0,0,.18);
+      --radius:22px;
+      --radius-lg:30px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.45}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .topbar{background:var(--yellow);color:#000;text-align:center;font-weight:900;letter-spacing:.03em;font-size:.84rem;padding:.45rem 1rem;text-transform:uppercase}
+    .header{background:#070707;color:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{max-width:1220px;margin:auto;padding:1rem 1.25rem;display:flex;align-items:center;gap:1.25rem}
+    .brand{display:flex;align-items:center;gap:.8rem;min-width:250px}
+    .brand-mark{width:56px;height:56px;border-radius:16px;background:var(--yellow);display:grid;place-items:center;color:#000;font-size:1.6rem;font-weight:900;box-shadow:0 0 0 4px rgba(255,209,26,.12)}
+    .brand-name{font-size:1.4rem;font-weight:1000;line-height:.94;letter-spacing:-.04em}
+    .brand-name span{display:block;color:var(--yellow);font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.18rem}
+    .links{display:flex;gap:1.15rem;flex:1;justify-content:center;flex-wrap:wrap}
+    .links a{font-size:.92rem;font-weight:900;text-transform:uppercase;color:#ededed;opacity:.94}
+    .links a:hover{color:var(--yellow)}
+    .phone{font-weight:950;color:var(--yellow);white-space:nowrap}
 
+    .hero{background:linear-gradient(90deg,rgba(0,0,0,.84) 0%,rgba(0,0,0,.7) 42%,rgba(0,0,0,.25) 68%), #0c0c0c;color:white;overflow:hidden}
+    .hero-inner{max-width:1220px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:2.4rem;align-items:center;padding:4.3rem 1.25rem}
+    .hero-copy h1{font-size:clamp(2.8rem,5.6vw,5.4rem);line-height:.92;margin:0 0 1rem;letter-spacing:-.07em;text-transform:uppercase}
+    .hero-copy p{font-size:1.12rem;max-width:620px;color:#ececec;margin:0 0 1.6rem}
+    .accent-line{width:160px;height:8px;background:var(--yellow);border-radius:999px;margin:1rem 0 1.2rem}
+    .actions{display:flex;gap:.85rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:1rem 1.25rem;font-weight:950;text-transform:uppercase;letter-spacing:.04em;border:2px solid transparent;transition:.2s ease}
+    .btn.primary{background:var(--yellow);color:#000}
+    .btn.primary:hover{background:#ffe15a}
+    .btn.secondary{border-color:var(--yellow);color:var(--yellow);background:rgba(255,255,255,.03)}
+    .btn.secondary:hover{background:rgba(255,209,26,.1)}
+    .hero-photo{border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+
+    .values{background:#111;color:white;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .values-grid{max-width:1220px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;padding:0 1.25rem}
+    .value{background:#181818;padding:1rem;text-align:center}
+    .value strong{display:block;color:var(--yellow);text-transform:uppercase;letter-spacing:.05em;font-size:1rem}
+    .value span{display:block;color:#d3d3d3;font-size:.88rem;margin-top:.15rem}
+
+    section{padding:4.5rem 1.25rem}
+    .wrap{max-width:1220px;margin:auto}
+    .section-title{text-align:center;margin-bottom:1.55rem}
+    .section-title h2{margin:0;font-size:clamp(2rem,3vw,3rem);line-height:.95;letter-spacing:-.055em;text-transform:uppercase}
+    .section-title .brush{width:140px;height:8px;background:var(--yellow);border-radius:999px;margin:.7rem auto 0}
+
+    .products{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+    .card{background:#fff;border:1px solid #ececec;border-radius:18px;padding:1rem;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+    .card-media{background:#fbfbfb;border-radius:16px;overflow:hidden;aspect-ratio:1/1;display:grid;place-items:center}
+    .card-media img{width:100%;height:100%;object-fit:cover}
+    .card h3{font-size:1rem;line-height:1.15;margin:.8rem 0 .45rem}
+    .stars{color:var(--yellow-2);font-size:.88rem}
+    .small{color:var(--muted);font-size:.83rem}
+    .price{font-size:1.16rem;font-weight:950;margin-top:.35rem}
+
+    .categories{background:linear-gradient(180deg,#111,#181818);color:white}
+    .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
+    .cat{position:relative;min-height:205px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);padding:1.1rem;display:flex;flex-direction:column;justify-content:flex-end}
+    .cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.68}
+    .cat:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.85));}
+    .cat>*{position:relative;z-index:1}
+    .cat h3{font-size:1.5rem;line-height:1.02;text-transform:uppercase;margin:0 0 .7rem;max-width:80%}
+    .cat .btn-sm{align-self:flex-start;background:var(--yellow);color:#000;border-radius:10px;padding:.55rem .85rem;font-size:.8rem;font-weight:950;text-transform:uppercase}
+
+    .maker{background:#f4f2ee}
+    .maker-shell{background:#fff;border-radius:28px;padding:1.4rem;box-shadow:0 12px 32px rgba(0,0,0,.08)}
+    .maker-grid{display:grid;grid-template-columns:1fr 1.3fr .9fr;gap:1.25rem;align-items:center}
+    .maker-photo,.polaroid{border-radius:18px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.1);background:#fdfdfd}
+    .maker-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+    .maker-copy h2{margin:0;font-size:clamp(2rem,2.8vw,3rem);letter-spacing:-.05em;line-height:1;font-family:Georgia, 'Times New Roman', serif;font-style:italic}
+    .maker-copy .brush{width:120px;height:7px;background:var(--yellow);border-radius:999px;margin:.6rem 0 1rem}
+    .maker-copy p{margin:.55rem 0;color:#444;font-size:1rem}
+    .badges{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:1.2rem}
+    .badge{padding:.9rem;border:1px solid #ececec;border-radius:16px;background:#fff}
+    .badge strong{display:block;font-size:.95rem}
+    .badge span{display:block;color:var(--muted);font-size:.82rem;margin-top:.12rem}
+    .polaroid{background:#fff;padding:.65rem .65rem 1.15rem;transform:rotate(-2deg)}
+    .polaroid img{width:100%;height:auto;border-radius:8px}
+    .polaroid-note{font-family:'Comic Sans MS', 'Marker Felt', cursive;font-size:1.25rem;margin:.3rem 0 0 .15rem;line-height:1}
+
+    .newsletter{background:var(--yellow)}
+    .newsletter-inner{max-width:1220px;margin:auto;display:grid;grid-template-columns:1.1fr auto;gap:1rem;align-items:center}
+    .newsletter h2{margin:0;font-size:2.1rem;line-height:.96;text-transform:uppercase;letter-spacing:-.04em}
+    .newsletter p{margin:.35rem 0 0;color:#282200;font-weight:600}
+    .form{display:flex;gap:.6rem;flex-wrap:wrap}
+    .form input{min-width:320px;padding:1rem 1.1rem;border:0;border-radius:12px;font-size:1rem}
+    .form button{padding:1rem 1.1rem;border:0;border-radius:12px;background:#000;color:#fff;font-weight:950;text-transform:uppercase}
+
+    footer{background:#090909;color:white;padding:3rem 1.25rem 2rem}
+    .footer-grid{max-width:1220px;margin:auto;display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:1.6rem}
+    .footer-title{font-size:.93rem;font-weight:950;letter-spacing:.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem}
+    footer p,footer a{display:block;color:#d2d2d2;font-size:.92rem;margin:.33rem 0}
+    .copyright{max-width:1220px;margin:1.5rem auto 0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);color:#9f9f9f;font-size:.84rem}
+
+    @media (max-width: 1024px){
+      .hero-inner,.newsletter-inner{grid-template-columns:1fr}
+      .maker-grid{grid-template-columns:1fr}
+      .products{grid-template-columns:repeat(2,1fr)}
+      .cat-grid,.values-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .links{display:none}
+      .phone{display:none}
+    }
+    @media (max-width: 640px){
+      .products,.cat-grid,.values-grid,.badges,.footer-grid{grid-template-columns:1fr}
+      .hero-inner{padding:3rem 1rem}
+      section{padding:3.3rem 1rem}
+      .nav{padding:.9rem 1rem}
+      .brand{min-width:0}
+      .newsletter-inner{grid-template-columns:1fr}
+      .form input{min-width:0;width:100%}
+      .form button{width:100%}
+    }
+  
+
+    /* Dynamic homepage product cards */
+    .product-link{display:block;color:inherit;text-decoration:none}
+    .product-link .card{height:100%;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+    .product-link:hover .card{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.13);border-color:rgba(255,209,26,.65)}
+    .product-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.75rem}
+    .spot-badge{display:inline-flex;align-items:center;border-radius:999px;background:#111;color:var(--yellow);font-size:.68rem;font-weight:950;letter-spacing:.05em;text-transform:uppercase;padding:.28rem .48rem;white-space:nowrap}
+    .card .product-meta{color:var(--muted);font-size:.8rem;margin-top:.25rem}
+    .placeholder-note{grid-column:1/-1;text-align:center;color:var(--muted);padding:1.5rem;border:1px dashed #ccc;border-radius:18px;background:#fff}
+    .cat{color:#fff}
+    .hero-photo{display:block;color:inherit;text-decoration:none}
+
+
+    .product-hero{background:#111;color:white;padding:2.4rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.08)}
+    .product-hero .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .breadcrumbs{color:#d7d7d7;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.82rem}
+    .breadcrumbs a{color:var(--yellow)}
+    .product-shell{max-width:1220px;margin:auto;padding:3rem 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;align-items:start}
+    .product-gallery{background:#fff;border:1px solid #ededed;border-radius:26px;padding:1rem;box-shadow:0 14px 36px rgba(0,0,0,.08)}
+    .main-product-image{background:#fbfbfb;border-radius:22px;overflow:hidden;display:grid;place-items:center;aspect-ratio:1/1}
+    .main-product-image img{width:100%;height:100%;object-fit:cover}
+    .thumb-row{display:flex;gap:.6rem;margin-top:.8rem;flex-wrap:wrap}
+    .thumb{border:2px solid transparent;border-radius:14px;background:#fbfbfb;padding:.25rem;cursor:pointer;width:74px;height:74px;overflow:hidden}
+    .thumb.active{border-color:var(--yellow)}
+    .thumb img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+    .product-copy{padding:.5rem 0}
+    .product-copy.full-width{grid-column:1/-1}
+    .eyebrow{margin:0 0 .45rem;color:var(--yellow-2);font-weight:1000;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+    .product-copy h1{font-size:clamp(2.4rem,4.5vw,4.2rem);line-height:.95;letter-spacing:-.06em;margin:0 0 .8rem;text-transform:uppercase}
+    .rating-line{color:var(--yellow-2);font-weight:900;margin:.3rem 0}
+    .product-price{font-size:2rem;font-weight:1000;margin:.5rem 0 1rem}
+    .lead{font-size:1.15rem;color:#333;font-weight:650}
+    .product-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.4rem 0}
+    .admin-note{border:1px dashed #d3bd4c;background:#fffbed;border-radius:16px;padding:1rem;color:#4a3d00;font-size:.9rem}
+    .details-section,.related-section{max-width:1220px;margin:auto;padding:1.25rem 1.25rem 3rem}
+    .details-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+    .spec-card{background:#fff;border:1px solid #ececec;border-radius:22px;padding:1.2rem;box-shadow:0 8px 26px rgba(0,0,0,.06)}
+    .spec-card h2,.related-section h2{margin:0 0 1rem;font-size:1.5rem;text-transform:uppercase;letter-spacing:-.03em}
+    table{width:100%;border-collapse:collapse}
+    th,td{text-align:left;vertical-align:top;border-top:1px solid #eee;padding:.75rem .4rem}
+    th{width:34%;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em;color:#555}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .mini-card{display:block;background:#fff;border:1px solid #ececec;border-radius:18px;padding:.9rem;color:inherit;box-shadow:0 8px 26px rgba(0,0,0,.06)}
+    .mini-card:hover{border-color:rgba(255,209,26,.7)}
+    .mini-card img{border-radius:14px;aspect-ratio:1/1;object-fit:cover;width:100%;background:#fbfbfb;margin-bottom:.65rem}
+    .mini-card strong{display:block;line-height:1.15}
+    .mini-card span{display:block;color:var(--muted);margin-top:.25rem}
+    @media (max-width: 900px){.product-shell,.details-grid,.related-grid{grid-template-columns:1fr}}
+
+  </style>
 </head>
 <body>
+  <div class="topbar">Hand-poured lures • Small-batch tackle • Built for real bites</div>
 
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="index.html">Nick's Lures</a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="admin/index.html">Admin</a>
+  <header class="header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Fish On Nick's Lures home">
+        <span class="brand-mark">🐟</span>
+        <span class="brand-name">Fish On<span>Nick's Lures</span></span>
+      </a>
+      <div class="links">
+        <a href="index.html#products">Shop Lures</a>
+        <a href="index.html#categories">Soft Plastics</a>
+        <a href="index.html#products">Jig Heads</a>
+        <a href="index.html#products">New Arrivals</a>
+        <a href="index.html#maker">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="phone" href="tel:17025103365">702-510-3365</a>
     </nav>
-  </div>
-</header>
+  </header>
 
+  <main>
+    <section class="product-hero">
+      <div class="wrap">
+        <div>
+          <div class="breadcrumbs"><a href="index.html">Home</a> / Product</div>
+          <h1 style="margin:.3rem 0 0;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.05em;text-transform:uppercase;line-height:1">Product Details</h1>
+        </div>
+        <a class="btn secondary" href="index.html#products">Back to Homepage Picks</a>
+      </div>
+    </section>
 
-  <main class="section">
-    <div class="container">
-      <div class="product-detail" data-product-detail></div>
-    </div>
+    <div id="product-app" aria-live="polite"></div>
   </main>
 
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.7rem"><span class="brand-mark">🐟</span><span class="brand-name">Fish On<span>Nick's Lures</span></span></div>
+        <p>Small-batch fishing lures, jig heads, and tackle from Las Vegas.</p>
+      </div>
+      <div>
+        <div class="footer-title">Contact Us</div>
+        <a href="tel:17025103365">702-510-3365</a>
+        <a href="mailto:info@nickslures.com">info@nickslures.com</a>
+        <p>Las Vegas, NV</p>
+      </div>
+      <div>
+        <div class="footer-title">Shop</div>
+        <a href="index.html#products">Shop Lures</a>
+        <a href="index.html#categories">Soft Plastics</a>
+        <a href="index.html#products">Jig Heads</a>
+        <a href="index.html#products">New Arrivals</a>
+      </div>
+      <div>
+        <div class="footer-title">About</div>
+        <a href="index.html#maker">About Us</a>
+        <a href="index.html#maker">Our Process</a>
+        <a href="index.html#products">Reviews</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <div class="footer-title">Customer Service</div>
+        <a href="index.html#contact">Shipping &amp; Returns</a>
+        <a href="index.html#contact">FAQ</a>
+        <a href="index.html#contact">Terms of Service</a>
+        <a href="index.html#contact">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Fish On Nick's Lures. All rights reserved. Demo product template.</div>
+  </footer>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; <span id="year"></span> Nick's Lures. All rights reserved.</p>
-  </div>
-</footer>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-  <script src="assets/js/product-store.js"></script>
-  <script src="assets/js/products-render.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/product-page.js"></script>
 </body>
 </html>
