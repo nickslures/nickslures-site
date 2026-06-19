@@ -1,0 +1,47 @@
+[
+  {
+    "id": "sample-bass-jig-black-blue",
+    "name": "Sample Bass Jig - Black & Blue",
+    "slug": "sample-bass-jig-black-blue",
+    "sku": "BJ-BB-001",
+    "price": 5.99,
+    "salePrice": null,
+    "shortDescription": "A sample featured lure for layout testing.",
+    "description": "Use this as a placeholder until real product details are added.",
+    "category": "jigs",
+    "tags": [
+      "bass",
+      "featured"
+    ],
+    "image": "assets/images/products/placeholder-product.svg",
+    "gallery": [],
+    "featured": true,
+    "status": "active",
+    "inventoryStatus": "in-stock",
+    "sortOrder": 10,
+    "createdAt": "2026-06-18",
+    "updatedAt": "2026-06-18"
+  },
+  {
+    "id": "sample-soft-plastic-green-pumpkin",
+    "name": "Sample Soft Plastic - Green Pumpkin",
+    "slug": "sample-soft-plastic-green-pumpkin",
+    "sku": "SP-GP-001",
+    "price": 4.49,
+    "salePrice": null,
+    "shortDescription": "A sample regular catalog product.",
+    "description": "Use this as a placeholder until real product details are added.",
+    "category": "soft-plastics",
+    "tags": [
+      "bass"
+    ],
+    "image": "assets/images/products/placeholder-product.svg",
+    "gallery": [],
+    "featured": false,
+    "status": "active",
+    "inventoryStatus": "in-stock",
+    "sortOrder": 20,
+    "createdAt": "2026-06-18",
+    "updatedAt": "2026-06-18"
+  }
+]

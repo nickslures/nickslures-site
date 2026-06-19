@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Products | Nick's Lures</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/products.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Nick's Lures</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin/index.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="section">
+    <div class="container">
+      <h1>Products</h1>
+      <p>All active lures will appear here. Categories and filters can be added later.</p>
+      <div class="product-grid" data-product-grid></div>
+    </div>
+  </main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Nick's Lures. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  <script src="assets/js/product-store.js"></script>
+  <script src="assets/js/products-render.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

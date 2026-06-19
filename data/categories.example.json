@@ -1,0 +1,32 @@
+[
+  {
+    "id": "jigs",
+    "name": "Jigs",
+    "description": "Bass jigs and skirted lures.",
+    "sortOrder": 10
+  },
+  {
+    "id": "soft-plastics",
+    "name": "Soft Plastics",
+    "description": "Worms, craws, swimbaits, and creature baits.",
+    "sortOrder": 20
+  },
+  {
+    "id": "hard-baits",
+    "name": "Hard Baits",
+    "description": "Crankbaits, jerkbaits, and topwater lures.",
+    "sortOrder": 30
+  },
+  {
+    "id": "spinnerbaits",
+    "name": "Spinnerbaits",
+    "description": "Spinnerbaits and bladed baits.",
+    "sortOrder": 40
+  },
+  {
+    "id": "custom",
+    "name": "Custom Lures",
+    "description": "Custom colors and made-to-order products.",
+    "sortOrder": 50
+  }
+]

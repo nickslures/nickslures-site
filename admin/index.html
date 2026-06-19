@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Admin Login | Nick's Lures</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+
+</head>
+<body>
+  <main class="admin-main">
+    <div class="admin-card">
+      <h1>Admin Login</h1>
+      <p class="notice">Prototype only. This is not real security yet.</p>
+      <form id="loginForm" class="form-grid">
+        <label>
+          Username
+          <input name="username" autocomplete="username" placeholder="owner">
+        </label>
+        <label>
+          Password
+          <input name="password" type="password" autocomplete="current-password" placeholder="demo">
+        </label>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../assets/js/admin-auth.js"></script>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      AdminAuth.login();
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>

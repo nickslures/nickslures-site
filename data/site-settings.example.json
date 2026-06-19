@@ -1,0 +1,12 @@
+{
+  "siteName": "Nick's Lures",
+  "tagline": "Hand-picked fishing lures built to catch more fish.",
+  "featuredProductLimit": 6,
+  "contactEmail": "sales@example.com",
+  "phone": "",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  }
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Admin Dashboard | Nick's Lures</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+
+</head>
+<body data-admin-page>
+  <div class="admin-layout">
+
+<aside class="admin-sidebar">
+  <h2>Nick's Lures Admin</h2>
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="products.html">Products</a>
+    <a href="product-edit.html">Add Product</a>
+    <a href="../index.html">View Site</a>
+    <a href="#" data-logout>Log Out</a>
+  </nav>
+</aside>
+
+    <main class="admin-main">
+      <h1>Dashboard</h1>
+      <p class="notice">This admin area is a planning/prototype shell. It is ready to connect to a real backend later.</p>
+      <div class="admin-card">
+        <h2>Common Tasks</h2>
+        <p><a class="button" href="product-edit.html">Add Product</a></p>
+        <p><a class="button secondary" href="products.html">Manage Products</a></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/admin-auth.js"></script>
+</body>
+</html>
