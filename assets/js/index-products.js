@@ -1,103 +1,116 @@
-(function () {
-  const store = window.FISH_ON_STORE || { products: [], categories: [] };
-  const products = Array.isArray(store.products) ? store.products : [];
-  const categories = Array.isArray(store.categories) ? store.categories : [];
+/*
+  Fish On Nick's Lures - homepage product renderer
+  ---------------------------------------------------------------------------
+  Reads assets/js/products.js and fills:
+  - #featured-products
+  - #home-category-grid
+  - #home-hero-product-link / #home-hero-product-image
+*/
+(function (window, document) {
+  'use strict';
 
-  function money(value) {
-    return typeof value === 'number'
-      ? value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
-      : 'Price coming soon';
-  }
+  const data = window.NICKS_LURES_DATA;
 
-  function stars(product) {
-    const count = Math.max(0, Math.min(5, Math.round(product.rating || 0)));
-    const starText = count ? '★'.repeat(count) : 'New';
-    const reviewText = product.reviewCount ? ` <span class="small">(${product.reviewCount})</span>` : '';
-    return `${starText}${reviewText}`;
+  function escapeHtml(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 
   function productUrl(product) {
-    return `product.html?product=${encodeURIComponent(product.slug)}`;
+    return '/product?product=' + encodeURIComponent(product.slug);
   }
 
-  function activeProducts() {
-    return products.filter((product) => product.status === 'active');
-  }
-
-  function renderHeroSpot() {
-    const heroProduct = activeProducts().find((product) => product.heroSpot) ||
-      activeProducts().find((product) => product.homePage && product.homePage.show);
-    if (!heroProduct) return;
-
-    const heroLink = document.getElementById('home-hero-product-link');
-    const heroImg = document.getElementById('home-hero-product-image');
-    const primaryLink = document.getElementById('hero-primary-link');
-
-    if (heroLink) {
-      heroLink.href = productUrl(heroProduct);
-      heroLink.setAttribute('aria-label', `View ${heroProduct.name}`);
-      heroLink.dataset.productSlug = heroProduct.slug;
-    }
-
-    if (heroImg) {
-      heroImg.src = heroProduct.image;
-      heroImg.alt = heroProduct.alt || heroProduct.name;
-    }
-
-    if (primaryLink) {
-      primaryLink.href = productUrl(heroProduct);
-    }
+  function imageTag(src, alt) {
+    const safeSrc = escapeHtml(src);
+    const safeAlt = escapeHtml(alt || 'Fish On Nick\'s Lures product image');
+    return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" onerror="this.closest('.card-media,.cat')?.classList.add('image-missing'); this.remove();">`;
   }
 
   function renderFeaturedProducts() {
-    const grid = document.getElementById('featured-products');
-    if (!grid) return;
+    const mount = document.getElementById('featured-products');
+    if (!mount) return;
 
-    const featured = activeProducts()
-      .filter((product) => product.homePage && product.homePage.show)
-      .sort((a, b) => (a.homePage.order || 999) - (b.homePage.order || 999));
-
-    if (!featured.length) {
-      grid.innerHTML = '<div class="placeholder-note">No homepage products are selected yet. Set <strong>homePage.show</strong> to true in <code>assets/js/products.js</code>.</div>';
+    if (!data || !data.getHomepageProducts) {
+      mount.innerHTML = '<p class="placeholder-note">Product data could not load. Check assets/js/products.js.</p>';
       return;
     }
 
-    grid.innerHTML = featured.map((product) => `
-      <a class="product-link" href="${productUrl(product)}" data-homepage-slot="${product.homePage.order || ''}" data-product-slug="${product.slug}">
-        <article class="card">
-          <div class="card-media"><img src="${product.image}" alt="${product.alt || product.name}" loading="lazy"></div>
-          <div class="product-card-top">
-            <span class="spot-badge">${product.homePage.label || 'Featured'}</span>
-            <span class="small">Spot ${product.homePage.order || ''}</span>
-          </div>
-          <h3>${product.name}</h3>
-          <div class="product-meta">${product.categoryName || ''}</div>
-          <div class="stars">${stars(product)}</div>
-          <div class="price">${money(product.price)}</div>
-        </article>
-      </a>
-    `).join('');
-  }
+    const products = data.getHomepageProducts();
+    if (!products.length) {
+      mount.innerHTML = '<p class="placeholder-note">No homepage products selected yet. Set homePage.show to true in assets/js/products.js.</p>';
+      return;
+    }
 
-  function renderCategories() {
-    const grid = document.getElementById('home-category-grid');
-    if (!grid) return;
-
-    grid.innerHTML = categories.map((category) => {
-      const href = category.comingSoon || !category.featuredProductSlug
-        ? '#contact'
-        : `product.html?product=${encodeURIComponent(category.featuredProductSlug)}`;
+    mount.innerHTML = products.map((product) => {
+      const badge = product.homePage && product.homePage.label ? product.homePage.label : 'Featured';
       return `
-        <a class="cat" href="${href}" data-category="${category.slug}">
-          <img src="${category.image}" alt="${category.alt || category.name}" loading="lazy">
-          <h3>${category.name.replace(' & ', ' &amp;<br>')}</h3>
-          <span class="btn-sm">${category.buttonText || 'Shop Now'}</span>
+        <a class="product-link" href="${escapeHtml(productUrl(product))}">
+          <article class="card">
+            <div class="card-media">
+              ${imageTag(product.mainImage, product.imageAlt)}
+            </div>
+            <div class="product-card-top">
+              <span class="stars" aria-label="Featured product">★ ★ ★ ★ ★</span>
+              <span class="spot-badge">${escapeHtml(badge)}</span>
+            </div>
+            <h3>${escapeHtml(product.name)}</h3>
+            <p class="small">${escapeHtml(product.shortDescription || product.categoryLabel || '')}</p>
+            <p class="product-meta">${escapeHtml(product.categoryLabel || '')}</p>
+            <div class="price">${escapeHtml(product.price || 'Call for price')}</div>
+          </article>
         </a>
       `;
     }).join('');
   }
 
-  renderHeroSpot();
-  renderFeaturedProducts();
-  renderCategories();
-})();
+  function renderCategories() {
+    const mount = document.getElementById('home-category-grid');
+    if (!mount) return;
+
+    if (!data || !Array.isArray(data.categories)) {
+      mount.innerHTML = '<p class="placeholder-note">Category data could not load. Check assets/js/products.js.</p>';
+      return;
+    }
+
+    mount.innerHTML = data.categories.map((category) => `
+      <a class="cat" href="${escapeHtml(category.url || 'products.html#' + category.slug)}">
+        <img src="${escapeHtml(category.image)}" alt="${escapeHtml(category.name)}" loading="lazy" onerror="this.parentElement.classList.add('image-missing'); this.remove();">
+        <h3>${escapeHtml(category.name)}</h3>
+        <span class="btn-sm">Shop Now</span>
+      </a>
+    `).join('');
+  }
+
+  function renderHeroProduct() {
+    if (!data || !data.getHeroProduct) return;
+    const product = data.getHeroProduct();
+    if (!product) return;
+
+    const heroLink = document.getElementById('home-hero-product-link');
+    const heroImage = document.getElementById('home-hero-product-image');
+    const primaryLink = document.getElementById('hero-primary-link');
+
+    if (heroLink) heroLink.href = productUrl(product);
+    if (primaryLink) primaryLink.href = productUrl(product);
+    if (heroImage) {
+      heroImage.src = product.mainImage;
+      heroImage.alt = product.imageAlt || product.name;
+    }
+  }
+
+  function boot() {
+    renderHeroProduct();
+    renderFeaturedProducts();
+    renderCategories();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})(window, document);
